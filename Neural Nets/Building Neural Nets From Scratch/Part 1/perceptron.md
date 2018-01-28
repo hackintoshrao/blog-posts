@@ -16,3 +16,5 @@ We’re gonna solve the classification problem where the test scores and grades 
 Let’s visualize the data, The ones in green represent the students who are accepted the red ones are the those who are rejected. [Here is the link to the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=IUpLCfvEw7kP&line=21&uniqifier=1) .
 
 ![Visualizing the data](../images/plot_data.png)
+
+Let’s start with a simple classification problem. We need a way to separate the red ones from the green ones. The nature of the data from the plot shows us that the these can be almost separated just by using straight line. So here’s the problem definition. Need to figure out this straight which best separates the students who are accepted (in green), from those who are rejected (in red). This line would also help us make future decision of whether to accept a student or not based on their test score and grades.
