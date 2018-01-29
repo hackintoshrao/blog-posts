@@ -17,4 +17,30 @@ Let’s visualize the data, The ones in green represent the students who are acc
 
 ![Visualizing the data](../images/plot_data.png)
 
-Let’s start with a simple classification problem. We need a way to separate the red ones from the green ones. The nature of the data from the plot shows us that the these can be almost separated just by using straight line. So here’s the problem definition. Need to figure out this straight which best separates the students who are accepted (in green), from those who are rejected (in red). This line would also help us make future decision of whether to accept a student or not based on their test score and grades.
+Let’s start with a simple classification problem. We need a way to separate the red ones from the green ones. The nature of the data from the plot shows us that the these can be almost separated just by using straight line. So here’s the problem definition. Need to figure out this straight which best separates the students who are accepted (in green), from those who are rejected (in red). This line would also help us make future decision of whether to accept a student or not based on their test score and grades.Once the answer is found out it would look something like this,
+
+![The straight line solution](../images/plot_good.png)
+
+---
+
+### The straight line 
+Now we know that we are trying find this straight line which best separates the data. The equation of a straight looks like this ,
+
+<em><strong> y = m * x + c</em></strong>
+
+<em><strong> m * x + c – y = 0 </em></strong>
+
+In the above equation m is the slope of the line and c is the y intercept of the line, both these values together characterize the line. Our goal is to find the values for <em><strong>m</em></strong> and <em><strong>c</em></strong> which will represent a line which will best separate the admitted students from the rejected ones. [Here is an useful link](https://www.mathsisfun.com/equation_of_line.html) if you want to know about the equation of the straight line and intuition behind it.
+
+The process in which we use various techniques to find the best values for these parameters is called <em><strong>learning</em></strong>. In machine learning terminology the values <em><strong>m</em></strong> and <em><strong>c</em></strong> are called the parameters and are represented by <em><strong>w</em></strong> and <em><strong>b</em></strong>.
+
+So now the equation becomes,
+
+<em><strong>w * x + b – y = 0</em></strong>
+
+<em><strong>w * test_score + b - grades= 0</em></strong>
+
+Let’s understand the necessary fundamental concepts and solve a relatively simpler problem before we tackle the current one.
+
+---
+
