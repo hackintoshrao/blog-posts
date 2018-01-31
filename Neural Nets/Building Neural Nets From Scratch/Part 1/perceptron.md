@@ -106,7 +106,7 @@ Here’s how we would model the linear classification task for the above analyze
 
 Let’s plot these 4 training examples and see how it looks, [Here is the link of the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=gqJPfMff3io5), again, make a copy and run it yourself.
 
-![And gate plot and code](../images/and_plot_code.png)
+![And gate plot and code](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_plot_code.png?raw=true)
 
 As you can see, the plot (1, 1) is in green, corresponding to output value 1, and the other 3 input plots are in red indicating that their output is 0.
 
@@ -126,7 +126,7 @@ Here’s how we would model the linear classification task for the above analyze
 ```
 The image below depicts the kind of straight line we are expecting, a line which can  separate the input (1,1) from the rest.
 
-![AND gate perceptron](../images/and_perceptron.png)
+![AND gate perceptron](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_perceptron.png?raw=true)
 
 > Refresher: That’s what a linear classifier for a binary classification task does, it separates the inputs whose outputs are  1 from those whose outputs are 0 by drawing a decision boundary using a straight line.
 
