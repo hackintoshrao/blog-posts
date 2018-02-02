@@ -77,19 +77,45 @@ That’s a valid question! Let’s figure that out so that it makes sense to con
 In the university admission problem are setup out to solve there are 2 inputs, the <em><strong><test scores (x1)</em></strong> and <em><strong> grades (x2) </em></strong>, we saw that the perceptron score is a linear function of inputs and weights, let <em><strong>w1 </em></strong> and <em><strong>w2 </em></strong> be the weights that for inputs <em><strong>x1 </em></strong> and <em><strong>x2</em></strong>, let a real number<em><strong>b</em></strong>  be the bias of the network. 
 
 Now according to the perceptron model the output score of the network with inputs <em><strong>x1</em></strong> and <em><strong>x2</em></strong>, and with weights <em><strong>w1 </em></strong> and <em><strong>w2 </em></strong> is 
+
 ```
-w1 * x1 + w2 * x2 + b 
+score = w1 * x1 + w2 * x2 + b 
+
+Output is: 
+     1 if score > 0
+     0 if score < 0
 ```
-remember <em><strong>x1 </em></strong> and <em><strong>x2</em></strong> are our inputs test scores and grades, so the above equation is linear, and is similar to the equation of a straight line, which is, 
+
+In case of our university admission data an output of 1 corresponds to the student being accepted and 0 being rejected.
+
+The goal is to learn the values w1, w2 and b in such a way that the perceptron network output (which is either 0 or 1) matches with the ground truth label y for most the training examples. We have 100 student records at our disposal for solving the university admission problem, we at-least expect that the output of perceptron matches with ground truth label for 90+ cases.
+
+Once the values of w1, w2 and b are learned in a way which satisfies the goal the following equation represents the line which can best separate 2 classes of data.
+
 ```
-a * x + b * y + c = 0
+w1 * x1 + w2 * x2 + b = 0
+```
+This fits the general equation of straight line which is represented by
+
+```
+A * x + B * y + C = 0
 ```
 
 [Check this link](https://www.mathsisfun.com/algebra/line-equation-general-form.html) to know more about equation of a straight line.
 
-Hence the perceptron model for 2 inputs represents a straight line in <em><strong>x</em></strong> and <em><strong>y</em></strong> axis. Hold on! Isn’t that what we need??!! A straight line to separate the accepted students from the rejected ones. Therefore we can use the perceptron model and find numerical values for <em><strong>w1</em></strong>, <em><strong>w2 </em></strong> and <em><strong>b</em></strong> in such a way that it would represent a line which could best separate the classes in our university admission dataset.
+Let’s consider an example, The following equation represents the straight line which separates the 2 classes of data, the accepted ones from the rejected ones for the university admission problem,
+
+<em><strong>2x1 + x2–18 = 0</em></strong> , where w1 = 2, w2 = 1 and c = -18.
+
+![line example](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/line_example.png?raw=true)
+
+Now you know the importance of having right set of values for w1, w2 and b. Because these parameters characterize the straight line.
+
+Hence, finding the right set of parameters for the perceptron network which could best classify our dataset inturn gives us a straight decision boundary which best separates the two classes of data.
 
 Still finding it hard to get the intuition? Well, don’t worry, let’s solve very simple problem which using perceptrons and in the which let’s gain more intuition about how it works and how it can be used to draw a straight line boundary to separate 2 classes of data.
+
+---
 
 Let’s start with the simpler task of classifying the outputs of a 2 input  AND gate using perceptrons,
 
@@ -106,8 +132,6 @@ Let’s analyse the above training data first,
  3. Each training example has just 1 output.
  4. The output's are either 0 or 1, so it's a binary classification task.
 ```
-
-Here’s how we would model the linear classification task for the above analyzed dataset using the perceptron model,
 
 Let’s plot these 4 training examples and see how it looks, [Here is the link of the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=gqJPfMff3io5), again, make a copy and run it yourself.
 
@@ -129,6 +153,7 @@ Here’s how we would model the linear classification task for the above analyze
 4. Which means for inputs input_1 = 1 and input_2 = 1, the output of the perceptron w1 * input_1 + w2 * input_2 + b should be > 0, and for rest of the inputs the output of the perceptron should be < 0.
 
 ```
+
 The image below depicts the kind of straight line we are expecting, a line which can  separate the input (1,1) from the rest.
 
 ![AND gate perceptron](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_perceptron.png?raw=true)
