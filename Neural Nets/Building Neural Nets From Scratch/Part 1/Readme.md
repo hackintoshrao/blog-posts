@@ -1,6 +1,10 @@
 # Intuitive and practical guide for building neural networks  from scratch
 ## Using perceptrons to solve university acceptance problem
 
+Here is the list of concepts which are covered in this blog,
+- Perceptrons.
+- Modelling the binary classification task using perceptron.
+- Building AND gate using perceptrons.
 
 ### The problem statement 
 
@@ -23,6 +27,7 @@ Let’s start with a simple classification problem. We need a way to separate th
 
 > We assume that there’s a functional mapping between the set of inputs and outputs, and during training we try to make sense of it and try to find that relationship.
 
+Let’s learn some fundamentals which are necessary to solve the problem and then get back to crack it.
 ---
 
 ## Perceptrons
