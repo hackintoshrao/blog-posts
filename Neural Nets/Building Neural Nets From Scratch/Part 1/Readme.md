@@ -252,4 +252,4 @@ print(df)
 
 ```
 
-![Compating AND output and the perceptron output](../images/and_pred_out_1.png)
+![Compating AND output and the perceptron output](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_pred_out_1.png?raw=true)
