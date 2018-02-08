@@ -160,4 +160,22 @@ The image below depicts the kind of straight line we are expecting, a line which
 
 > Refresher: That’s what a linear classifier for a binary classification task does, it separates the inputs whose outputs are  1 from those whose outputs are 0 by drawing a decision boundary using a straight line.
 
+---
+
+Let’s start with random values for <em><strong>w1</em></strong>, <em><strong>w2</em></strong> and <em><strong>b</em></strong> to begin with and see how well it separates the 2 classes of data.
+
+Set <em><strong>w1 = 3, w2 = 2, b = -1</em></strong> to begin with, lets replace these values in the perceptron model and try couple of things,
+
+First, check if the line represented by these parameters correctly separates data.
+
+```
+# the decision boundary is represented by 
+w1 * x1 + w2 * x2 + b = 0
+# Replace w1, w2 and b with the random values we chose.
+# Here is our straight line equation.
+3 * x1 + 2 * x2 - 1 = 0
+```
+
+![Straight line classifying AND gate dataset](../images/and_classify_1.png)
+
 
