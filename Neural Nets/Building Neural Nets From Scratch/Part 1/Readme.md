@@ -253,3 +253,12 @@ print(df)
 ```
 
 ![Compating AND output and the perceptron output](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_pred_out_1.png?raw=true)
+
+As you can clearly see in the table above the actual AND gate output and the perceptron prediction doesn’t match. [Here](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=E0wyrHZjR0nx&line=4&uniqifier=1) is the link to notebook cell, make a copy of it and run it on your own, try various values of w1, w2 and b.
+
+With parameters set to values <em><strong>w1 = 1, w2 = 1 and b = -1.5</em></strong> the perceptron model is able to separate the 2 classes of data and predict the output correctly too.
+
+![AND correct classify](../images/and_good.png)
+
+
+
