@@ -176,6 +176,80 @@ w1 * x1 + w2 * x2 + b = 0
 3 * x1 + 2 * x2 - 1 = 0
 ```
 
-![Straight line classifying AND gate dataset](../images/and_classify_1.png)
+![Straight line classifying AND gate dataset](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_classify_1.png?raw=true)
+
+Clearly the straight line <em><strong>3 * x1 + 2 * x2 – 1 = 0</em></strong> which is represented by parameters <em><strong>w1 = 3, w2 = 2 and b = -1</em></strong> is not able to separate the red ones from green point.
+
+[Here is the link to the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=BbnMb09s3mZf&line=31&uniqifier=1), just make a copy and run on your own. Try the code with different values for w1, w2 and b.
+
+Let’s check the perceptrons output for these parameters and compare it with the ground truth label.
+
+```python
+
+m collections import OrderedDict
+import numpy as np
 
 
+# Setting the values for parameters w1, w2 and b.
+# Try the code with various parameter values.
+w1 = 3
+w2 = 2
+b =  -1
+
+
+def find_output(score):
+    """
+    The perceptron output is 
+      1 if score >= 0
+      0 if score < 0
+    """
+    if score >= 0:
+        return 1
+    
+    return 0
+
+def find_score(x1, x2, w1=w1, w2=w2, b=b):
+    """
+    The perceptron score is calculated by 
+    score = x1 * w1 + x2 * w2 + b
+    """
+    
+    score = x1 * w1 + x2 * w2 + b
+    return score 
+
+
+def find_perceptron_prediction(x1,x2, w1=w1,w2=w2, b=b):
+    """
+    1. Find the score 
+    2. Find the perceptron prediction.
+    
+    """
+    score = find_score(x1,x2)
+    prediction = find_output(score)
+    return prediction
+  
+
+and_gate_input_0 = np.array([1, 1, 0, 0])
+and_gate_input_1 = np.array([0, 1, 0, 1])
+# The output is 1 only in case where both the corresponding inputs are 1.
+and_gate_output  = np.array([0, 1, 0, 0])
+
+# Find the perceptron output for the AND gate dataset using the following parameters, 
+# w1 = 3, w2 = 2, b = -1.
+
+prediction = []
+
+# for all 4 samples in the AND dataset find the perceptron prediction.
+for i in range(4):
+    pred = find_perceptron_prediction(and_gate_input_0[i], and_gate_input_1[i]) 
+    prediction.append(pred)
+    
+df= pd.DataFrame(OrderedDict( ( ('Input 0', pd.Series(and_gate_input_0)), ('Input 1', pd.Series(and_gate_input_1)),
+                               ('Actual AND output', pd.Series(and_gate_output)), ('perceptron_prediction', pd.Series(prediction)))))
+
+print(df)
+
+
+```
+
+![Compating AND output and the perceptron output](../images/and_pred_out_1.png)
