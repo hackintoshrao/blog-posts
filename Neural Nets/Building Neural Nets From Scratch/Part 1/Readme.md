@@ -256,9 +256,13 @@ print(df)
 
 As you can clearly see in the table above the actual AND gate output and the perceptron prediction doesn’t match. [Here](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=E0wyrHZjR0nx&line=4&uniqifier=1) is the link to notebook cell, make a copy of it and run it on your own, try various values of w1, w2 and b.
 
-With parameters set to values <em><strong>w1 = 1, w2 = 1 and b = -1.5</em></strong> the perceptron model is able to separate the 2 classes of data and predict the output correctly too.
+With parameters set to values <em><strong>w1 = 1, w2 = 1 and b = -1.5</em></strong> the perceptron model is able to separate the 2 classes of data and predict the output correctly too. [Here is the link to notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=E0wyrHZjR0nx&line=4&uniqifier=1)
 
 ![AND correct classify](../images/and_good.png)
+
+With parameters set to values w1 = 1, w2 = 1 and b = -1.5 the perceptron prediction matches the actual AND gate output, Here is the [link to the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=XsjbTr_AmS9k&line=50&uniqifier=1),
+![AND gate data classified correctly](../images/and_correct_table.png)
+
 
 
 
