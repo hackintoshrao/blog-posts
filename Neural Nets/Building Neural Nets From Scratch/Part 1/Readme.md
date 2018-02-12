@@ -258,10 +258,33 @@ As you can clearly see in the table above the actual AND gate output and the per
 
 With parameters set to values <em><strong>w1 = 1, w2 = 1 and b = -1.5</em></strong> the perceptron model is able to separate the 2 classes of data and predict the output correctly too. [Here is the link to notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=E0wyrHZjR0nx&line=4&uniqifier=1)
 
-![AND correct classify](../images/and_good.png)
+![AND correct classify](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_good.png?raw=true)
 
 With parameters set to values w1 = 1, w2 = 1 and b = -1.5 the perceptron prediction matches the actual AND gate output, Here is the [link to the notebook cell](https://colab.research.google.com/notebook#fileId=1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H&scrollTo=XsjbTr_AmS9k&line=50&uniqifier=1),
-![AND gate data classified correctly](../images/and_correct_table.png)
+![AND gate data classified correctly](https://github.com/hackintoshrao/blog-posts/blob/master/Neural%20Nets/Building%20Neural%20Nets%20From%20Scratch/Part%201/images/and_correct_table.png?raw=true)
+
+---
+
+As an exercise try to set the parameters w1, w2 and b such that it satisfies the OR gate output.
+
+But what about the initial problem we set out to solve? To draw the straight line to correctly classify or separate the accepted and rejected students?
+
+
+In case of classifying AND gate output we set the parameters w1, w2 and b manually by hand. This brute force approach doesn’t scale when we have hundreds, thousands or sometimes millions of data points. And here we had only 2 inputs, how would we do it in case there’s a tens or even hundreds of output?
+
+In the next post of the series we’ll learn about an algorithm which would learn the parameters (weights and bias) of the perceptron network on their own. We’ll have some fun learning some fundamental calculus too and then solve the university admission classification problem in an automated way.
+
+Note: A lot of emphasis has been laid on making this blog really easy to be followed even for an absolute beginner. If you have questions or you wanna drop in a feedback on improving the blog please feel free to comment. If you find this useful don’t forget to clap and share. See you soon in the next blog. Till then, happy learning!
+
+---
+
+Additional sources :
+
+    [More on bias in neural nets](https://stackoverflow.com/questions/2480650/role-of-bias-in-neural-networks)
+    [Role of activation function neural nets](https://www.quora.com/What-is-the-role-of-the-activation-function-in-a-neural-network-How-does-this-function-in-a-human-neural-network-system)
+    [More on perceptrons](https://cs.stanford.edu/people/eroberts/courses/soco/projects/neural-networks/Neuron/index.html)
+
+
 
 
 
