@@ -108,3 +108,82 @@ This is like an intuitive and empirical proof that the squared error function do
 ​
 * * *
 
+
+ ![](https://cdn-images-1.medium.com/max/1200/1*4DV-ofZRk0v2ZM0sxllK_g.png)
+*The number of classified points with its loss for various values of&nbsp;weight1*
+
+ ![](https://cdn-images-1.medium.com/max/1200/1*U3ziMAMS7hDqOjdk0bZaAA.png)
+
+Take a look at those marked points circle in red, the value of loss is at its least value of 0.095604 when the number of wrongly classified points is 20.
+
+But when the number of wrongly classified points are 10 the value of loss is expected to reduce compared to what it was when it misclassified 20 points, but instead the loss increases gradually to 0.22&nbsp;.&nbsp;
+
+This is like an intuitive and empirical proof that the squared error function doesn’t actually encapture the goodness of a classifier, it basically tries to fit a regression line and fails to understand that the outputs 1 and 0 are the values which just indicates the category of data and these are not continuous valued outputs. In the next blog we’ll discuss more about the loss functions and optimization techniques that can be used in classifiers.&nbsp;
+
+> But how do we know optimize the parameters to fit a straight line which can best classify these two classes of&nbsp;data?
+
+* * *
+
+#### The optimization technique
+
+Phew, finally we’ve reached the climax. The issue with the squared error function was that it took the large error values into consideration even from the correctly classified points. We need to extract as much information as we can only from the wrongly classified points.
+
+&nbsp;There are two possible cases where the straight line boundary would be wrong,&nbsp;
+
+**Case 1:** When the straight line is too much into the red points area.
+
+ ![](https://cdn-images-1.medium.com/max/1200/1*jLYy-pntqzeCkfbWqKt2EQ.png)
+
+- This is the case where lot of red point are misclassified and almost none of the green points are wrongly classified.
+- The parameters to the straight line are 5, 3, -2.
+- The prediction of perceptron in this case for all the misclassified red points is 1, but their actual labels are 0.&nbsp;
+- In this case the line has to be pulled back towards the green points cluster.
+- This can be done by subtracting the values of these wrongly classified points to the parameters.
+
+Here is the sequence of steps to be followed for this case,&nbsp;
+
+```
+initialize w1, w2 and b
+```
+
+```
+For all wrongly classified red points(that is when y = 0 and y^ = 1)
+```
+
+```
+# x1 represents the x axis value of misclassified red point # x1 represents the test score in the university admission data w1 = w1 - (a small number) * x1 # x2 represents the y-axis value of misclassified red point # x2 represents the grades. w2 = w2 - (a small number) * x2
+```
+
+```
+# update bias b = b - (a small number)
+```
+
+To make sure that the update to parameters w1, w2 and b are not very large, we multiply the values with a small number before the update. This is small number is called **_learning rate_** and is represented by value **α** (alpha). Usually the learning rate will of order 0.1 to 0.0001. The convergence of the parameters to optimal values slows down with decrease in learning rate. But the large value of learning rate would cause the parameters to overshoot from the optimal value.
+
+Here is the snippet for updating parameter for the first case,&nbsp;
+
+Let us run one iteration of the optimization and see whether the classifier gets better. The number of wrongly classified points should reduce if the optimization is effective. Here are the results before and after the classification,&nbsp;
+
+ ![](https://cdn-images-1.medium.com/max/1200/1*9ZZUGI0Qq1x8Qa3rgwLnQw.png)
+
+The first plot corresponds to perceptrons prediction before the optimization, it wrongly classifies 39 data points with its initial set of parameters&nbsp;
+
+But after the optimization the performance significantly improves and the number of wrongly classified points reduces to just 6.
+
+Here is the[link to the notebook](https://medium.com/r/?url=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1_u0KMavhqmyTsLCIce0ay7J9Aao-vE-H%23scrollTo%3DlW_eY7WYAv2W%26line%3D152%26uniqifier%3D1), make a copy, running it yourself and play around. Try and run with various values of learning rate. With decrease in learning rate the optimization on the parameters has to be run multiple times.
+
+Below are series of images which shows the goodness of the classification after one run of optimization for various values of learning rates.
+
+ ![](https://cdn-images-1.medium.com/max/800/1*sg7FY-1yagPyDF0qQ2BwSQ.png)
+
+ ![](https://cdn-images-1.medium.com/max/800/1*DU1KmY3ebtEjfLP-kU9nnQ.png)
+
+ ![](https://cdn-images-1.medium.com/max/800/1*EHgwop58qJ4a6j3d73PnDw.png)
+
+ ![](https://cdn-images-1.medium.com/max/800/1*livFZPw87jMNedlLPBVdGA.png)
+
+ ![](https://cdn-images-1.medium.com/max/800/1*eYkIoG2Or6EsSNdESw9leQ.png)
+
+ ![](https://cdn-images-1.medium.com/max/800/1*RzNx_fn292Cbq1iTGqYI7g.png)
+
+Don’t assume that the optimization becomes less effective with smaller learning rates, the optimization just gets slower and has to be run multiple times for parameters to reach the optimal value. Too small a value for le
